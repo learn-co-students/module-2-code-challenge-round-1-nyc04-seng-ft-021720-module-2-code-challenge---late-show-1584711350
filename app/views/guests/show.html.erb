@@ -1,0 +1,8 @@
+<h1><%= @guest.name %> </h1>
+<p> <%= @guest.occupation %><br /><br />
+<p> Appears in these episodes:</p> <br />
+<ul>
+  <% @guest.episodes.each do |episode| %>
+  <li><%= link_to episode.date, episode_path(episode) %> - <%= @guest.appearances.find_by(appearance_ids == episode.appearance_ids) %></li>
+  <% end %>
+</ul>

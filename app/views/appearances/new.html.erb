@@ -1,0 +1,12 @@
+<h1>New Appearance</h1>
+
+<%= form_for @appearance do |f| %>
+  <%= f.label :guest %>
+  <%= f.collection_select :guest_id, Guest.all, :id, :name %><br />
+  <%= f.label :episode %>
+  <%= f.collection_select :episode_id, Episode.all, :id, :number %><br />
+  <%= f.label :rating %>
+  <%= f.select :rating, 0...11 %> <br />
+
+  <%= f.submit %>
+<% end %>
