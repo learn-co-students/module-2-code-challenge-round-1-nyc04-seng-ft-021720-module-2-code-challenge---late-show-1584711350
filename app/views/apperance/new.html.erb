@@ -1,0 +1,9 @@
+<h3> Create New Apperance </h3>
+
+
+<%= form_for (@apperance) do |form| %>
+    Guest Name: <%= f.collection_select :guest_id, Guest.order(:name), :id, :name, include_blank: true %>
+    Episode: <%= f.collection_select :episode_id, Episode.order(:name), :id, :date, include_blank: true %>
+
+    <%= f.submit %>
+    <% end %>
