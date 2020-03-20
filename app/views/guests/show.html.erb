@@ -2,7 +2,7 @@
 <h3>Occupation: <%= @guest.occupation %></h3>
 <br>
 <div>Appeared on the Following Episodes:<div>
-<% @guest.episodes.each do |episode| %>
+<% @guest.rating_sort.each do |episode| %>
 <ul>
     <li>Episode #<%= episode.number %></li>
     <li>Episode Date: <%= link_to episode.date, episode_path(episode) %></li>
