@@ -9,6 +9,12 @@
   </head>
 
   <body>
+    <ul>
+      <li><%= link_to "Guests", guests_path %></li>
+      <li><%= link_to "Episodes", episodes_path %></li>
+      <li><%= link_to "Appearances", appearances_path %></li>
+    </ul>
+    <hr>
     <%= yield %>
   </body>
 </html>
