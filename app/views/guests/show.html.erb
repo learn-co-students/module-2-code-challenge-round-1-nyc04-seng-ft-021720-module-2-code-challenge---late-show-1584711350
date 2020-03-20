@@ -1,0 +1,11 @@
+
+<h1> Welcome to  <%= @guest.name %>'s page!</h1>
+<h2> Occupation: <%= @guest.occupation.capitalize%> </h2>
+
+<ol>
+<% @guest.episodes.each do |episode|%>
+<li>
+<h2> Date: <%= episode.date %> Episode Number:  <%= episode.number%> Appearance Rating: <%= episode.appearances.find_by(guest_id: @guest).rating%> <h2>
+</li>
+<%end%>
+</ol>
