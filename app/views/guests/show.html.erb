@@ -1,16 +1,20 @@
 
 <h1> Welcome to  <%= @guest.name %>'s page!</h1>
 <h2> Occupation: <%= @guest.occupation.capitalize%> </h2>
-<img src="<%= @guest.picture_url%>" alt="Smiley face" height="42" width="42">
+<img src="<%= @guest.picture_url%>" alt="idk their picture" height="400" width="550">
 
 
-<% appearances = @guest.appearances.sort_by(&:rating).reverse %>
+<%= button_to "Sort Appearances - Ascending", guest_sort_path, method: :get %>
+<%= button_to "Sort Appearances - Descending", guest_path, method: :get %>
+
+<h2> Sorted by Rating </h2>
 <ol>
-<%appearances.each do |appearance| %>
+<% @appearances.each do |appearance| %>
 <li>
 <%= link_to "#{appearance.episode.date} Episode Number: #{appearance.episode.number} Appearance Rating: #{appearance.rating}", appearance.episode%> </li>
  <%end%>
 </ol>
+
 
 
 
