@@ -12,6 +12,12 @@
 
 ActiveRecord::Schema.define(version: 20170309163029) do
 
+  create_table "appearances", force: :cascade do |t|
+    t.integer "rating"
+    t.integer "guest_id"
+    t.integer "episode_id"
+  end
+
   create_table "episodes", force: :cascade do |t|
     t.date "date"
     t.integer "number"

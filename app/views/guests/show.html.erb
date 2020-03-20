@@ -2,7 +2,8 @@
 
 <%=@guest.name%>
 <%=@guest.occupation%>
-
+<br>
 <%=@guest.episodes.each do |episode|%>
     <%=link_to "#{episode.date}",episode_path(episode) %>
     <%= episode.rating %>
+    <%end%>
