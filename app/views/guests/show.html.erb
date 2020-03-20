@@ -9,9 +9,8 @@ Each Episode date should link to the show page for that Episode. DONE %>
 
 <h3>List of Appearances:</h3>
 <ul>
-    <%= @guest.episodes.each do |episode| %>
-    <li><%= link_to episode.date, episode %><br>
-        <% end %>
-        <%#      <% guest_rating = Appearance.all.find{|appearance| appearance.episode == @guest } %>
-        <%#      Rating: <%= guest_rating.rating %> </li>
+    <% @guest.appearances.each do |appearance| %>
+    <li>Episode: <%= appearance.episode.number %> | Date: <%= link_to appearance.episode.date, appearance.episode %>
+        | Rating: <%= appearance.rating %></li>
+    <% end %>
 </ul>

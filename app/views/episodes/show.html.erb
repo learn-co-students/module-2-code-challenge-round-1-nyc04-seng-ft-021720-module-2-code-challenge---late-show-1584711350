@@ -3,10 +3,11 @@
 <%# Each guest's name should link to the Guest Show page  DONE %>
 <%# On the Episode show page, show the average rating of the Appearances for the episode. DONE %>
 
-<h3>Episode Date: <%= @episode.date %></h3>
+<h3>Episode <%= @episode.number %></h3>
+<h4>Date: <%= @episode.date %></h4>
 <h3>List of Guests:</h3>
 <ul>
-    <%= @episode.guests.each do |guest| %>
+    <% @episode.guests.each do |guest| %>
     <li><%= link_to guest.name, guest %></li>
     <% end %>
 </ul>
