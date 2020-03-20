@@ -1,15 +1,18 @@
 <h1><%= @guest.name %> </h1>
 <p> <%= @guest.occupation %><br /><br />
-<p> Appears in these episodes:</p> <br />
-<ul>
-  <% @guest.episodes.each do |episode| %>
-  <li>Date aired: <%= link_to episode.date, episode_path(episode) %> - Rating: <%= Appearance.where(episode: episode, guest: @guest).first[:rating] %> / 5</li>
-  <% end %>
-</ul>
-
+<% if @episodes %>
+  <p> Appears in these episodes:</p> <br />
+  <ul>
+    <% @episode_data.each do |episode| %>
+      <li>
+        Date aired: <%= episode[:date] %> -
+        Rating: <%= episode[:rating] %>/ 5</li>
+    <% end %>
+  </ul>
+<% end %>
 
 <%# <ul> %>
-  <%# <% @guest.episodes.each do |episode| %> %>
-  <%# <li>Date aired: <%= link_to episode.date, episode_path(episode) %> - Rating: <%= Appearance.where(episode: episode, guest: @guest).first[:rating] %> / 5</li> %>
-  <%# <% end %> %>
+  <%# <% @guest.episodes.each do |episode| %>
+  <%#Appearance.where(episode: episode, guest: @guest).first[:rating] %> 
+  <%# <% end %>
 <%# </ul> %>
