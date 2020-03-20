@@ -4,13 +4,8 @@
 <h2> Episode Date </h2>
 <%=@episode.date%>
 <%=@episode.guests.each do |guest|%>
-    <%= link_to "#{guest.name}",guests_path(@guest)%>
+    <%= link_to "#{guest.name}",guest_path(guest)%>
     <%end%>
 
 
-    <h2> Episode Average Rating </h2>
-    <% ratings =  @episode.appearance.each do |appearance| %>
-        <%appearance.rating%>
-        <%end%>
-        <% average = ratings.sum / ratings.size %>
-        <%=average%>
+  

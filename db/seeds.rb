@@ -23,5 +23,8 @@ date = Date.parse('2015-09-08')
 (1..40).each do |num|
   Episode.create(date: date, number: num)
   date = date.next
+  Appearance.create(rating:num,guest_id:num,episode_id:num)
 end
+
+
 
