@@ -3,6 +3,6 @@
 <p> Appears in these episodes:</p> <br />
 <ul>
   <% @guest.episodes.each do |episode| %>
-  <li><%= link_to episode.date, episode_path(episode) %> - <%= @guest.appearances.find_by(appearance_ids == episode.appearance_ids) %></li>
+  <li><%= link_to episode.date, episode_path(episode) %> -  appearance rating here</li>
   <% end %>
 </ul>
