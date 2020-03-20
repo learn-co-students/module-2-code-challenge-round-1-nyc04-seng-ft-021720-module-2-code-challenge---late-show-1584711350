@@ -1,0 +1,25 @@
+<h1> Make a new Appearance! </h1>
+
+
+<% if @appearance.errors.any? %>
+    <% @appearance.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+      <%end%>
+<%end %>
+<%= form_for @appearance do |f| %>
+
+<%=%>
+<%= f.label :guest_id, "Please choose your Guest!"%>
+<%= f.collection_select :guest_id, Guest.all, :id, :name %>
+<br>
+<%= f.label :episode_id, "Please choose your episode number!"%>
+<%= f.collection_select :episode_id, Episode.all, :id, :number %>
+<br>
+<%= f.label :rating, "What is the rating?"%>
+<%= f.number_field :rating%>
+<br>
+<%= f.submit%>
+
+
+
+<% end %>

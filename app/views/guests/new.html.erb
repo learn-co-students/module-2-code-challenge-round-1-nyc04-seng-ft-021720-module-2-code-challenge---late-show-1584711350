@@ -1,0 +1,15 @@
+<%= form_for @guest do |f| %>
+
+<%=%>
+<%= f.label :name, "What is your name?"%>
+<%= f.text_field :name %>
+<br>
+<%= f.label :occupation, "What is your occupation?"%>
+<%= f.text_field :occupation %>
+<br>
+<%= f.label :picture_url, "Picture Link?"%>
+<%= f.text_field :picture_url%>
+<br>
+<%= f.submit%>
+
+<%end%>

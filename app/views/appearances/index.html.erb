@@ -1,0 +1,7 @@
+<h1>All Appearances</h1>
+
+<ul>
+  <% @appearances.each do |appearance| %>
+    <li><%=link_to "Episode #{appearance.episode.number} - #{appearance.episode.date.strftime("%B %d, %Y")}", appearance.episode%></li>
+  <% end %>
+</ul>
