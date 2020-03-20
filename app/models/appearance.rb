@@ -1,4 +1,6 @@
 class Appearance < ApplicationRecord
+  attr_accessor :rating
+
   belongs_to :episode
   belongs_to :guest
   validates :guest_id, uniqueness: {message: " has already appeared in that episode"}

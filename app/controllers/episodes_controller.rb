@@ -6,6 +6,7 @@ class EpisodesController < ApplicationController
 
   def show
     @episode = Episode.find(params[:id])
+    # @average_appearance_rating = average_appearance_rating(@episode)
   end
 
   private

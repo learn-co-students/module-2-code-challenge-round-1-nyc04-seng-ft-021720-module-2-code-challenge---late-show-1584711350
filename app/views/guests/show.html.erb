@@ -3,6 +3,13 @@
 <p> Appears in these episodes:</p> <br />
 <ul>
   <% @guest.episodes.each do |episode| %>
-  <li><%= link_to episode.date, episode_path(episode) %> -  appearance rating here</li>
+  <li>Date aired: <%= link_to episode.date, episode_path(episode) %> - Rating: <%= Appearance.where(episode: episode, guest: @guest).first[:rating] %> / 5</li>
   <% end %>
 </ul>
+
+
+<%# <ul> %>
+  <%# <% @guest.episodes.each do |episode| %> %>
+  <%# <li>Date aired: <%= link_to episode.date, episode_path(episode) %> - Rating: <%= Appearance.where(episode: episode, guest: @guest).first[:rating] %> / 5</li> %>
+  <%# <% end %> %>
+<%# </ul> %>

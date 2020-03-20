@@ -109,7 +109,7 @@ On the Guest show page, add a list of the Episodes the Guest has appeared on.
 For each Episode, show the:
 
 <!-- - date of the Episode -->
-- rating for the Appearance
+<!-- - rating for the Appearance -->
 
 Each Episode date should link to the show page for that Episode.
 
@@ -130,7 +130,7 @@ A Guest should only appear on a given Episode once.
 
 ### 8. Advanced: Episode Average Rating
 
-On the Episode show page, show the average rating of the Appearances for the episode.
+<!-- On the Episode show page, show the average rating of the Appearances for the episode. -->
 
 ### 9. Advanced: Guest Show Page Appearance Ordering
 
