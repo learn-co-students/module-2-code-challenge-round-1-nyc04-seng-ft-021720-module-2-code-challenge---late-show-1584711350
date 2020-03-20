@@ -1,0 +1,26 @@
+<h1> New Appearance <h1>
+<% if @appearance.errors.any? %>
+<% @appearance.error.full_messages.each do |error_message| %>
+    <%= error_message %>
+    <%end%>
+<br>
+<%=form_for @appearance do |f| %>
+<%=f.label :guests%>
+<%=f.collection_select :guest_id, Guest.all, :id,:name%>
+
+<br>
+<%=f.label :episode%>
+<%=f.collection_select :appearance_id, Appearance.all, :id,:name%>
+
+<br>
+<%=f.label :rating%>
+<%=f.text_field :rating%>
+
+<br>
+<%= f.submit "Submit Appearance"%>
+
+<%end%>
+
+
+
+
