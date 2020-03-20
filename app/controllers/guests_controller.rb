@@ -19,7 +19,7 @@ class GuestsController < ApplicationController
     end
     @episode_data = @episode_data.sort_by { |episode|
       episode[:rating]
-    }
+    }.reverse
   end
 
   private
