@@ -92,7 +92,7 @@ To log that a specific Guest appeared on a certain Episode, we need to create th
 - Enter a numeric rating
 - Submit the form -->
 
-After submitting the form, the user should be redirected to the selected episode's show page.
+<!-- After submitting the form, the user should be redirected to the selected episode's show page. -->
 
 <!-- ### 4. Episode Show Page
 
@@ -130,7 +130,7 @@ For each Episode, show the:
 
 ### 8. Advanced: Episode Average Rating
 
-On the Episode show page, show the average rating of the Appearances for the episode.
+<!-- On the Episode show page, show the average rating of the Appearances for the episode. -->
 
 ### 9. Advanced: Guest Show Page Appearance Ordering
 
