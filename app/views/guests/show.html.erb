@@ -2,6 +2,7 @@
 <h3><%= @guest.occupation %></h3>
 <ul>
 <% @guest.appearances.each do |appearance| %>
-    <l1><%= appearance%>
+    <li><%= link_to appearance.episode.date, episode_path(appearance.episode)%></li>
+    <li>Rating: <%= appearance.rating%></li>
     <%end%>
 <ul
