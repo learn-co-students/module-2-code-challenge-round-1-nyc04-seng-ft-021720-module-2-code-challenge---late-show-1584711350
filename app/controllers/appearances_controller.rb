@@ -5,6 +5,10 @@ class AppearancesController < ApplicationController
         @appearance = Appearance.new
     end 
 
+    def index 
+       @appearances= Appearance.all
+    end 
+
     def create
         @appearance = Appearance.new(strong_params)
         if @appearance.save

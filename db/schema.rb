@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200320135129) do
+ActiveRecord::Schema.define(version: 20200320143840) do
 
   create_table "appearances", force: :cascade do |t|
     t.integer "guest_id"
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 20200320135129) do
     t.string "occupation"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "picture_url"
   end
 
 end

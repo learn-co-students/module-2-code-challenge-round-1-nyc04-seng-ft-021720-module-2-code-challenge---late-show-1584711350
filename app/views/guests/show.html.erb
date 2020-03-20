@@ -1,15 +1,16 @@
 
 <h1> Welcome to  <%= @guest.name %>'s page!</h1>
 <h2> Occupation: <%= @guest.occupation.capitalize%> </h2>
-
+<img src="<%= @guest.picture_url%>" alt="Smiley face" height="42" width="42">
 
 
 <% appearances = @guest.appearances.sort_by(&:rating).reverse %>
 <ol>
 <%appearances.each do |appearance| %>
 <li>
- <%= appearance.episode.date %> Episode Number:  <%= appearance.episode.number%> Appearance Rating: <%= appearance.rating %>
- </li>
+<%= link_to "#{appearance.episode.date} Episode Number: #{appearance.episode.number} Appearance Rating: #{appearance.rating}", appearance.episode%> </li>
  <%end%>
 </ol>
+
+
 
