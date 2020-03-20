@@ -5,5 +5,6 @@
 <br>
 <%@guest.episodes.each do |episode|%>
     <%=link_to "#{episode.date}",episode_path(episode) %>
-    <%=Appearance.find(episode.id).rating %>
+    
+    <label>Rating: </label><%=Appearance.find(episode.id).rating %>
     <%end%>
