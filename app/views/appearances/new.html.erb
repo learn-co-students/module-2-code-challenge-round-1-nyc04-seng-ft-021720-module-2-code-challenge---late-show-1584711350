@@ -1,0 +1,21 @@
+<h1>Create New Appearance</h1>
+
+<% if @appearance.errors.any? %>
+	<i><p>There was an issue or two:</p>
+	<ol>
+		<% @appearance.errors.full_messages.each do |message| %>
+			<li><%= message %></li>
+		<% end %>
+	</ol></i><br />
+<% end %>
+
+<%= form_for @appearance do |f| %>
+	<p><%= f.label :guest %>:
+	<%= f.collection_select :guest_id, @guests, :id, :name %></p>
+	<p><%= f.label :episode %>:
+	<%= f.collection_select :episode_id, @episodes, :id, :number_date %></p>
+	<p><%= f.label :rating %>: <%= f.number_field :rating %></p>
+	<%= f.submit %>
+<% end %>
+<p><%= link_to 'Cancel, go to Episode List', episodes_path %></p>
+<p><%= link_to 'Cancel, go to Guest List', guests_path %></p>

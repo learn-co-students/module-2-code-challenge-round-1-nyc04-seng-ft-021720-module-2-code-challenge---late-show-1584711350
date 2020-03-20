@@ -1,0 +1,16 @@
+<h1><%= @guest.name %></h1>
+<p>Occupation: <%= @guest.occupation %></p>
+<% if @episodes.count > 0 %>
+	<%= @guest.name.split(' ')[0] %> has appeared on these episodes:
+	<ul>
+		<% @episodes.each do |episode| %>
+			<li><%= link_to episode.number_date, episode_path(episode) %>
+			- Rating: <%= episode.appearances.select{
+				|appearance| appearance.guest == @guest
+			}[0].rating %></li>
+		<% end %>
+	</ul>
+<% else %>
+	<%= @guest.name.split(' ')[0] %> hasn't appeared on any episodes yet. Click above to make that happen!
+<% end %>
+<p><%= link_to 'All Guests', guests_path %></p>
