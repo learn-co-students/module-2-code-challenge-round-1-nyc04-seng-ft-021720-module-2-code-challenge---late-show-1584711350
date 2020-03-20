@@ -1,0 +1,32 @@
+<%# Choose an existing guest from a select dropdown DONE %>
+<%# Choose an existing episode from a select dropdown DONE %>
+<%# Enter a numeric rating DONE %>
+<%# Submit the form DONE %>
+<%# After submitting the form, the user should be redirected to the selected episode's show page. DONE %>\
+<%# A Guest should only appear on a given Episode once. DONE %>
+<%# The rating on an Appearance should be between 1 and 5 (inclusive - 1 and 5 are okay).DONE %>
+
+<% if @appearance.errors.any? %>
+<div id="error_explanation">
+    <p>There were some errors:</p>
+    <ul>
+        <% @appearance.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+        <% end %>
+    </ul>
+</div>
+<% end %>
+
+<h1>Book a new appearance</h1>
+
+<%= form_for @appearance do |f| %>
+
+<%= f.label :guest_id %><br>
+<%= f.collection_select :guest_id, Guest.all, :id, :name %><br>
+<%= f.label :episode_id %><br>
+<%= f.collection_select :episode_id, Episode.all, :id, :number %><br>
+<%= f.label :rating %><br>
+<%= f.text_field :rating %><br>
+<br>
+<%= f.submit %>
+<% end %>

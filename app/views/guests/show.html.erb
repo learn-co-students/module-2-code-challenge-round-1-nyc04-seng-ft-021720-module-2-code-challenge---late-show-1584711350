@@ -1,0 +1,17 @@
+<%# Guest's name, Guest's occupation - DONE %>
+<%# add a list of the Episodes the Guest has appeared on. DONE %>
+<%# date of the Episode - DONE
+rating for the Appearance - WIP
+Each Episode date should link to the show page for that Episode. DONE %>
+
+<h3>Name: <%= @guest.name %></h3>
+<h3>Occupation: <%= @guest.occupation %></h3>
+
+<h3>List of Appearances:</h3>
+<ul>
+    <%= @guest.episodes.each do |episode| %>
+    <li><%= link_to episode.date, episode %><br>
+        <% end %>
+        <%#      <% guest_rating = Appearance.all.find{|appearance| appearance.episode == @guest } %>
+        <%#      Rating: <%= guest_rating.rating %> </li>
+</ul>
