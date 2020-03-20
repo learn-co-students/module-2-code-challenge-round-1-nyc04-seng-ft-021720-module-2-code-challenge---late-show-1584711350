@@ -1,0 +1,11 @@
+<h1><%= @guest.name %>'s Page</h1>
+<h3>Occupation: <%= @guest.occupation %></h3>
+<br>
+<div>Appeared on the Following Episodes:<div>
+<% @guest.rating_sort.each do |episode| %>
+<ul>
+    <li>Episode #<%= episode.number %></li>
+    <li>Episode Date: <%= link_to episode.date, episode_path(episode) %></li>
+    <li>Episode Rating: <%= episode.current_appearance_rating   %></li>
+</ul>
+<% end %>
