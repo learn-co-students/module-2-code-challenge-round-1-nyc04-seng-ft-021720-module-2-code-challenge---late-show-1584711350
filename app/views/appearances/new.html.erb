@@ -1,0 +1,20 @@
+<%if @appearance.errors.any?%>
+    <%@appearance.errors.full_messages.each do |message|%>
+    <ul>
+    <li><%= message%></li>
+    <% end%>
+    </ul>
+<%end %>
+
+
+<h1>Enter a New Appearance</h1>
+<%=form_for @appearance do |f| %>
+<%=f.collection_select :guest_id, Guest.all, :id, :name %>
+<br>
+<%=f.collection_select :episode_id, Episode.all, :id, :date %>
+<br>
+<%=f.label :rating %>
+<%=f.number_field :rating %>
+<br>
+<%=f.submit%>
+<% end %>
