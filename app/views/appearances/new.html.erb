@@ -1,0 +1,22 @@
+<h1>New Appearance</h1>
+<% if @appearance.errors.any? %>
+  <div id="error_explanation">
+  <h3>There were some errors:</h3>
+  <ul>
+    <% @appearance.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+  </div>
+<% end %> 
+
+<%= form_for @appearance do |f| %>
+  <%= f.label :guest %>
+  <%= f.collection_select :guest_id, Guest.all, :id, :name %><br />
+  <%= f.label :episode %>
+  <%= f.collection_select :episode_id, Episode.all, :id, :number %><br />
+  <%= f.label :rating %>
+  <%= f.number_field :rating %> <br />
+
+  <%= f.submit %>
+<% end %>
